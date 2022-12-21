@@ -1,0 +1,343 @@
+@import "./scss/variable";
+@import "./scss/mixin";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+* {
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-appearance: value;
+  -moz-appearance: value;
+  appearance: value;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a,
+img,
+img a {
+  border: 0;
+  outline: 0 !important;
+  text-decoration: none !important;
+  @include transition(all 0.3s ease-in);
+}
+
+:focus {
+  outline: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ol,
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+article {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+
+body {
+  font-family: var(--bs-body-font-family);
+  font-size: size(14);
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  width: size(1280);
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.MuiTypography-root,
+.MuiMenuItem-root,
+.MuiButtonBase-root,
+.MuiTableCell-root {
+  font-family: var(--bs-body-font-family) !important;
+}
+
+.MuiCheckbox-root.Mui-checked,
+.MuiCheckbox-indeterminate,
+.MuiRadio-root.Mui-checked {
+  color: var(--bs-theme) !important;
+}
+
+.globle_loder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+
+  .MuiCircularProgress-root {
+    color: var(--bs-theme);
+  }
+}
+
+.heading {
+  font-size: size(24);
+  font-weight: 500;
+}
+
+// FLex
+
+.Dflex {
+  @include flexbox;
+
+  &.sp-bt {
+    @include justify-content(space-between);
+  }
+
+  &.al-cnt {
+    @include align-items(center)
+  }
+
+  &.js-cnt {
+    @include justify-content(center)
+  }
+
+  &.al-tp {
+    @include align-content(start)
+  }
+
+  &.fl-wp {
+    @include flex-wrap(wrap)
+  }
+}
+
+
+// Line Button
+.text_nav {
+  font-weight: 500;
+  position: relative;
+  color: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+
+  &.wht {
+    &::before {
+      background: rgba(var(--bs-white-rgb));
+    }
+
+    &:hover {
+      color: rgba(var(--bs-white-rgb));
+    }
+  }
+
+  &.themeBlue {
+    color: var(--bs-primary);
+
+    &::before {
+      background: var(--bs-primary);
+    }
+
+    &:hover {
+      color: var(--bs-primary);
+    }
+  }
+
+  &::before {
+    @include beforeBl;
+    width: 100%;
+    height: 1px;
+    @include transform(scaleX(0) translateZ(0));
+    @include transform-origin (100% 100%);
+    @include transition(transform 0.5s cubic-bezier(0.19, 1, 0.22, 1));
+  }
+
+  &:hover {
+    &::before {
+      @include transform(scaleX(1) translateZ(0));
+      @include transform-origin (0 0);
+    }
+  }
+}

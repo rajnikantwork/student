@@ -1,0 +1,17 @@
+@import "../../scss/variable";
+@import "../../scss/mixin";
+
+.MuiBreadcrumbs-root {
+  .MuiBreadcrumbs-ol {
+    .MuiBreadcrumbs-li {
+      .MuiTypography-root {
+        font-size: size(14);
+        text-transform: capitalize;
+      }
+      a {
+        color: var(--bs-black);
+        cursor: pointer;
+      }
+    }
+  }
+}

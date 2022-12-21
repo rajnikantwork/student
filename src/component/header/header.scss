@@ -1,0 +1,39 @@
+@import '../../scss/mixin';
+@import '../../scss/variable';
+
+header {
+    background-color: var(--bs-gray-100);
+    padding: size(15) size(20);
+
+    .branding {
+        width: 50px;
+        margin-right: size(30);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .navList {
+        li {
+            padding: 0;
+            width: auto;
+
+            a {
+                padding: size(10);
+                color: var(--bs-gray-dark);
+                font-size: size(16);
+                font-weight: 500;
+
+                &.active {
+                    font-weight: 600;
+                    color: var(--bs-black);
+                }
+            }
+        }
+    }
+
+    #userMenu {
+        color: var(--bs-black);
+    }
+}

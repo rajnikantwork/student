@@ -1,0 +1,42 @@
+@import '../../scss/mixin';
+@import '../../scss/variable';
+
+.MuiTableSortLabel-root {
+    text-transform: uppercase;
+
+    &:hover {
+        color: white !important;
+    }
+
+    &.Mui-active {
+        color: white !important;
+        font-weight: 700;
+    }
+}
+
+.actionButtons {
+    button {
+        min-width: auto;
+    }
+}
+
+.detailsContainer {
+    font-size: size(16);
+
+    .MuiGrid-container {
+        line-height: 1.67;
+
+        label {
+            font-weight: 600;
+        }
+    }
+
+}
+
+.notavailable {
+    h2 {
+        font-size: size(46);
+        padding-bottom: size(30);
+        color: var(--bs-gray-300);
+    }
+}

@@ -1,0 +1,23 @@
+@import '../../scss/mixin';
+@import '../../scss/variable';
+
+.not_found_container {
+    min-height: 100vh;
+    width: 100%;
+    @include flex-direction(column);
+
+    .fof_head {
+        font-size: size(220);
+        font-weight: 600;
+        color: var(--bs-gray-200);
+
+        svg {
+            margin: 0 size(30);
+        }
+    }
+
+    p {
+        font-size: size(20);
+        margin-bottom: size(30);
+    }
+}

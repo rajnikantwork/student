@@ -1,0 +1,39 @@
+@import "../../scss/mixin";
+@import "../../scss/variable";
+
+.wrapper {
+    padding: size(20);
+}
+
+.derken {
+    background-color: darken(red, 15%);
+    margin-top: size(20);
+}
+
+.lighten {
+    margin: size(20);
+    width: size(200);
+    height: size(200);
+    background-color: lighten(rgb(2, 97, 2), 55%);
+}
+
+.mix {
+    margin: size(20);
+    height: size(200);
+    background-color: mix(green, rgb(255, 238, 0));
+}
+
+.mapget {
+    background-color: map-get($color-theme, "tertiary");
+    height: sum(20, 80) * 1vh;
+    width: min(200px, 700px, 300px);
+}
+
+.dark-light {
+    @include avatar(100px, $circle: false);
+    @include theme-colors($light-theme: true);
+
+    body.dark & {
+        @include theme-colors($light-theme: false);
+    }
+}
